@@ -19,9 +19,10 @@ a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
 a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 
-.wrap{max-width:1018px;margin:32px auto 40px;padding:0 16px;display:flex;align-items:flex-start;gap:20px}
-.page{flex:1 1 auto;min-width:0;max-width:794px;background:#fff;padding:60px 66px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.side{flex:none;width:192px;position:sticky;top:24px}
+.wrap{position:relative;max-width:794px;margin:32px auto 40px}
+.page{background:#fff;padding:60px 66px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.side{position:absolute;top:0;bottom:0;left:calc(100% + 20px);width:192px}
+.side .download{position:sticky;top:24px}
 
 .download{--w:192px;display:flex;align-items:center;justify-content:center;gap:8px;width:var(--w);height:52px;padding:0 16px;border-radius:26px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:width .35s cubic-bezier(.4,0,.2,1),padding .35s cubic-bezier(.4,0,.2,1),background .2s}
 .download:hover{background:#000;text-decoration:none}
@@ -56,9 +57,10 @@ li{margin-bottom:6px;line-height:1.6}
 .skill{margin:0 0 10px;line-height:1.6}
 .row{display:flex;justify-content:space-between;gap:2px 16px;flex-wrap:wrap;margin:0}
 
-@media (max-width:1060px){
-  .wrap{display:block;max-width:826px}
-  .side{position:fixed;top:auto;right:16px;bottom:16px;width:auto;z-index:10}
+@media (max-width:1260px){
+  .wrap{max-width:794px;margin:32px auto 40px;padding:0 16px}
+  .side{position:fixed;top:auto;left:auto;right:16px;bottom:16px;width:auto;z-index:10}
+  .side .download{position:static}
 }
 @media (max-width:700px){
   .wrap{margin:0;padding:0}
@@ -73,7 +75,7 @@ li{margin-bottom:6px;line-height:1.6}
 @media print{
   body{background:#fff}
   .side{display:none}
-  .wrap{display:block;margin:0;padding:0;max-width:none}
+  .wrap{margin:0;padding:0;max-width:none}
   .page{box-shadow:none;margin:0;padding:0;max-width:none}
   .role{break-inside:avoid}
 }
