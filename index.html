@@ -10,206 +10,168 @@
 <meta property="og:description" content="6+ years designing B2B SaaS platforms, mobile apps and web applications. View or download the CV.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://cv.saeed.design/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
 <style>
-:root{--ink:#141414;--muted:#555;--rule:#bdbdbd;--link:#2f5fc4;--bg:#f4f4f2;--paper:#fff;--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+:root{--ink:#111;--grey:#444;--rule:#999;--link:#1f3a8a}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+body{margin:0;background:#e9e9e7;color:var(--ink);font-family:Arial,"Liberation Sans",Helvetica,sans-serif;font-size:15px;line-height:1.55}
 a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
-a:focus-visible,.download:focus-visible{outline:2px solid var(--link);outline-offset:3px}
-.page{max-width:860px;margin:40px auto;background:var(--paper);padding:64px 72px;border:1px solid #e6e6e3}
-header{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
-h1{margin:0;font-family:var(--serif);font-weight:400;font-size:52px;line-height:1.1;letter-spacing:-.01em}
-.title{margin:10px 0 0;font-size:19px;font-weight:700;color:var(--ink)}
-.download{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;border-radius:8px;background:var(--ink);color:#fff;font-weight:600;font-size:15px;white-space:nowrap}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+
+.bar{max-width:794px;margin:24px auto 12px;display:flex;justify-content:flex-end}
+.download{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:6px;background:var(--ink);color:#fff;font-weight:700;font-size:14px}
 .download:hover{background:#000;text-decoration:none}
-.download svg{width:20px;height:20px;flex:none}
-.contact{display:flex;flex-wrap:wrap;gap:4px 20px;margin:20px 0 0;padding:0;font-size:15px;list-style:none}
-.contact a{color:var(--link)}
-h2{margin:48px 0 20px;padding-bottom:8px;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:28px;line-height:1.25;font-weight:400;color:var(--ink)}
-.summary{margin:0;font-size:17px;line-height:1.65;text-wrap:pretty}
-.role{margin-top:32px}
-.role:first-of-type{margin-top:0}
-.role-head{display:flex;justify-content:space-between;align-items:baseline;gap:4px 16px;flex-wrap:wrap}
-h3{margin:0;font-size:17px;font-weight:600;line-height:1.4}
-.dates{color:var(--muted);font-size:14px;white-space:nowrap}
-.org{margin:2px 0 0;color:var(--muted);font-size:15px}
-.org a{font-weight:600}
-ul.points{margin:10px 0 0;padding-left:20px}
-ul.points li{margin-top:6px}
-.skills{margin:0;display:grid;grid-template-columns:170px 1fr;gap:14px 24px}
-.skills dt{font-weight:600}
-.skills dd{margin:0}
-.row{display:flex;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;margin-top:8px}
-.row:first-of-type{margin-top:0}
-footer{max-width:860px;margin:0 auto 40px;padding:0 8px;color:var(--muted);font-size:14px;text-align:center}
+.download:focus-visible{outline-color:var(--ink);outline-offset:3px}
+.download svg{width:18px;height:18px;flex:none}
+
+.page{max-width:794px;margin:0 auto 40px;background:#fff;padding:60px 66px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+
+h1{margin:0;font-size:30px;line-height:1.15;font-weight:700}
+.title{margin:2px 0 6px;font-size:16px;font-weight:700;color:var(--grey)}
+.line{margin:0}
+
+h2{margin:30px 0 12px;padding-bottom:3px;border-bottom:1px solid var(--rule);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0}
+
+.summary{margin:0;line-height:1.7}
+
+.role{margin-top:20px}
+h2 + .role{margin-top:0}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:2px 16px;flex-wrap:wrap;margin:0}
+.head .co{font-weight:700}
+.dates{color:var(--grey);white-space:nowrap}
+.note{margin:0;font-style:italic;color:var(--grey)}
+ul{margin:4px 0 0;padding-left:24px}
+li{margin-bottom:6px;line-height:1.6}
+
+.skill{margin:0 0 10px;line-height:1.6}
+.row{display:flex;justify-content:space-between;gap:2px 16px;flex-wrap:wrap;margin:0}
+
 @media (max-width:700px){
-  .page{margin:0;padding:32px 20px;border:0}
-  h1{font-size:40px}
-  h2{font-size:24px}
+  .bar{margin:0;padding:12px 16px;background:#fff;border-bottom:1px solid #ddd}
   .download{width:100%;justify-content:center}
-  .skills{grid-template-columns:1fr;gap:2px 0}
-  .skills dd{margin-bottom:12px}
-  footer{margin:24px auto}
+  .page{padding:28px 18px;margin:0;box-shadow:none}
+  h1{font-size:28px}
+  .dates{white-space:normal}
 }
 @media print{
-  body{background:#fff;font-size:11pt}
-  .page{margin:0;padding:0;border:0;max-width:none}
-  .download,footer{display:none}
-  h2{margin-top:24px}
+  body{background:#fff}
+  .bar{display:none}
+  .page{box-shadow:none;margin:0;padding:0;max-width:none}
   .role{break-inside:avoid}
 }
 </style>
 </head>
 <body>
-<main class="page">
 
-<header>
-  <div>
-    <h1>Saeed Gamal</h1>
-    <p class="title">Senior Product UI/UX Designer</p>
-  </div>
+<div class="bar">
   <a class="download" href="Saeed_Gamal_CV.pdf" download="Saeed_Gamal_CV.pdf">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
     Download CV (PDF)
   </a>
-</header>
+</div>
 
-<ul class="contact">
-  <li>Cairo, Egypt</li>
-  <li><a href="tel:+201551205266">+20 155 120 5266</a></li>
-  <li><a href="mailto:Hi@saeed.design">Hi@saeed.design</a></li>
-  <li><a href="https://saeed.design">saeed.design</a></li>
-  <li><a href="https://www.linkedin.com/in/s3eed-gamal/">LinkedIn</a></li>
-  <li><a href="https://www.behance.net/s3eed">Behance</a></li>
-  <li><a href="https://dribbble.com/profsaid">Dribbble</a></li>
-</ul>
+<main class="page">
 
-<section aria-labelledby="summary-h">
-  <h2 id="summary-h">Professional Summary</h2>
-  <p class="summary">Senior Product UI/UX Designer with 6+ years of experience designing B2B SaaS platforms, mobile apps and web applications for clients in Egypt, Saudi Arabia, the UAE and Jordan. Led 10+ designers through 50+ projects, and now own end-to-end product design for a study-abroad SaaS platform, from user research to live, AI-assisted builds.</p>
-</section>
+<h1>Saeed Gamal</h1>
+<p class="title">Senior Product UI/UX Designer</p>
+<p class="line">Cairo, Egypt | <a href="tel:+201551205266">+20 155 120 5266</a> | <a href="mailto:Hi@saeed.design">Hi@saeed.design</a></p>
+<p class="line">Portfolio: <a href="https://saeed.design">saeed.design</a> | LinkedIn: <a href="https://www.linkedin.com/in/s3eed-gamal/">linkedin.com/in/s3eed-gamal</a> | Behance: <a href="https://www.behance.net/s3eed">behance.net/s3eed</a> | Dribbble: <a href="https://dribbble.com/profsaid">dribbble.com/profsaid</a></p>
 
-<section aria-labelledby="exp-h">
-  <h2 id="exp-h">Work Experience</h2>
+<h2>Professional Summary</h2>
+<p class="summary">Senior Product UI/UX Designer with 6+ years of experience designing B2B SaaS platforms, mobile apps and web applications for clients in Egypt, Saudi Arabia, the UAE and Jordan. Led 10+ designers through 50+ projects, and now own end-to-end product design for a study-abroad SaaS platform, from user research to live, AI-assisted builds.</p>
 
-  <article class="role">
-    <div class="role-head"><h3>Senior Product Designer &amp; Builder</h3><span class="dates">Nov 2024 - Present</span></div>
-    <p class="org"><a href="https://linkedin.com/company/levntura">Levntura</a> (<a href="https://www.linkedin.com/company/ticlick">Ticlick</a>) · Jordan, Remote · Part-time until Sep 2026, full-time since Oct 2026</p>
-    <ul class="points">
-      <li>Own end-to-end product design for Ticlick, a B2B SaaS platform for study-abroad agencies: agency web platform, student mobile app and web app.</li>
-      <li>Work directly with the founder, with no business analyst or product owner, running my own user research and iterations.</li>
-      <li>Ship live, working flows with AI tools (Claude, Figma Make) on GitHub, Vercel and Cloudflare to validate ideas in the real product.</li>
-    </ul>
-  </article>
+<h2>Work Experience</h2>
 
-  <article class="role">
-    <div class="role-head"><h3>Senior Product Designer</h3><span class="dates">Jan 2026 - Jun 2026</span></div>
-    <p class="org"><a href="https://linkedin.com/company/al-rashedon-for-lawyership-legal-consultations/">Al-Rashidoon</a> · Saudi Arabia · Contract</p>
-    <ul class="points">
-      <li>Designed a C2C legal-services mobile app connecting lawyers with individuals, from concept to final handoff.</li>
-      <li>Acted as de facto product owner, turning the founder's verbal ideas into documented requirements, user flows and information architecture.</li>
-      <li>Worked closely with developers through delivery to keep the build aligned with the design.</li>
-    </ul>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>Senior Product Designer &amp; Builder</strong>, <a class="co" href="https://linkedin.com/company/levntura">Levntura</a> (<a class="co" href="https://www.linkedin.com/company/ticlick">Ticlick</a>), Jordan, Remote</span><span class="dates">Nov 2024 - Present</span></p>
+  <p class="note">Part-time until Sep 2026, full-time since Oct 2026</p>
+  <ul>
+    <li>Own end-to-end product design for Ticlick, a B2B SaaS platform for study-abroad agencies: agency web platform, student mobile app and web app.</li>
+    <li>Work directly with the founder, with no business analyst or product owner, running my own user research and iterations.</li>
+    <li>Ship live, working flows with AI tools (Claude, Figma Make) on GitHub, Vercel and Cloudflare to validate ideas in the real product.</li>
+  </ul>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>UX Design Lead</h3><span class="dates">May 2024 - Nov 2025</span></div>
-    <p class="org"><a href="https://www.linkedin.com/company/alamiyaalhura/posts/">Alalmiyah Alhura</a> (<a href="https://www.linkedin.com/company/truevs/home/">True Venture</a>) · Egypt, On-site</p>
-    <ul class="points">
-      <li>Led 10+ designers of mixed seniority, owning hiring, mentoring, performance evaluation and workload planning.</li>
-      <li>Delivered 50+ projects (mobile apps, web apps, dashboards, POS systems) for clients in Egypt, Saudi Arabia and the UAE, including a leading Egyptian bank, Venus, Aseer Al Kotb and Fayendra.</li>
-      <li>Built a shared design system and introduced regular design reviews.</li>
-    </ul>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>Senior Product Designer</strong>, <a class="co" href="https://linkedin.com/company/al-rashedon-for-lawyership-legal-consultations/">Al-Rashidoon</a>, Saudi Arabia, Contract</span><span class="dates">Jan 2026 - Jun 2026</span></p>
+  <ul>
+    <li>Designed a C2C legal-services mobile app connecting lawyers with individuals, from concept to final handoff.</li>
+    <li>Acted as de facto product owner, turning the founder's verbal ideas into documented requirements, user flows and information architecture.</li>
+    <li>Worked closely with developers through delivery to keep the build aligned with the design.</li>
+  </ul>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>Senior Product Designer</h3><span class="dates">May 2023 - Jan 2024</span></div>
-    <p class="org"><a href="https://www.linkedin.com/company/nabdaatofficial/">Nabadat</a> · Saudi Arabia · Contract</p>
-    <ul class="points">
-      <li>Designed a healthcare appointment-booking platform end to end, from user research to prototypes and final UI.</li>
-      <li>Drove product and business decisions with developers to shape the final product.</li>
-    </ul>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>UX Design Lead</strong>, <a class="co" href="https://www.linkedin.com/company/alamiyaalhura/posts/">Alalmiyah Alhura</a> (<a class="co" href="https://www.linkedin.com/company/truevs/home/">True Venture</a>), Egypt, On-site</span><span class="dates">May 2024 - Nov 2025</span></p>
+  <ul>
+    <li>Led 10+ designers of mixed seniority, owning hiring, mentoring, performance evaluation and workload planning.</li>
+    <li>Delivered 50+ projects (mobile apps, web apps, dashboards, POS systems) for clients in Egypt, Saudi Arabia and the UAE, including a leading Egyptian bank, Venus, Aseer Al Kotb and Fayendra.</li>
+    <li>Built a shared design system and introduced regular design reviews.</li>
+  </ul>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>Military Service</h3><span class="dates">Oct 2021 - Mar 2023</span></div>
-    <p class="org">Egyptian Armed Forces · Completed</p>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>Senior Product Designer</strong>, <a class="co" href="https://www.linkedin.com/company/nabdaatofficial/">Nabadat</a>, Saudi Arabia, Contract</span><span class="dates">May 2023 - Jan 2024</span></p>
+  <ul>
+    <li>Designed a healthcare appointment-booking platform end to end, from user research to prototypes and final UI.</li>
+    <li>Drove product and business decisions with developers to shape the final product.</li>
+  </ul>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>Interaction Designer</h3><span class="dates">Jun 2020 - Jan 2021</span></div>
-    <p class="org"><a href="https://www.linkedin.com/company/serv5">Serv5</a> · Egypt, On-site</p>
-    <ul class="points">
-      <li>Turned verbal client requirements into business analysis, sitemaps, user flows and wireframes for clients in different markets.</li>
-      <li>Built interactive prototypes, validated them with stakeholders and handed off through Zeplin.</li>
-    </ul>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>Military Service</strong>, Egyptian Armed Forces (completed)</span><span class="dates">Oct 2021 - Mar 2023</span></p>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>Freelance UI/UX Designer</h3><span class="dates">Jan 2019 - Jun 2020</span></div>
-    <p class="org">Self-employed</p>
-    <ul class="points">
-      <li>Designed websites and app interfaces for freelance clients while studying.</li>
-    </ul>
-  </article>
-</section>
+<div class="role">
+  <p class="head"><span><strong>Interaction Designer</strong>, <a class="co" href="https://www.linkedin.com/company/serv5">Serv5</a>, Egypt, On-site</span><span class="dates">Jun 2020 - Jan 2021</span></p>
+  <ul>
+    <li>Turned verbal client requirements into business analysis, sitemaps, user flows and wireframes for clients in different markets.</li>
+    <li>Built interactive prototypes, validated them with stakeholders and handed off through Zeplin.</li>
+  </ul>
+</div>
 
-<section aria-labelledby="skills-h">
-  <h2 id="skills-h">Core Skills</h2>
-  <dl class="skills">
-    <dt>Design</dt><dd>Product Design, UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Prototyping, Design Systems, Responsive Web Design, Mobile App Design, Design Handoff</dd>
-    <dt>Research</dt><dd>User Research, User Interviews, Usability Testing, Behavior Analytics (Microsoft Clarity), Business Analysis, Requirements Gathering</dd>
-    <dt>Leadership</dt><dd>Design Team Leadership, Hiring, Mentoring, Design Reviews, Stakeholder Management, Cross-functional Collaboration</dd>
-    <dt>AI-Assisted Design</dt><dd>AI-assisted requirements analysis, AI-assisted research, AI-generated user flows, rapid AI prototyping for user testing, turning prototypes into coded, deployed products</dd>
-    <dt>Tools</dt><dd>Figma, Figma Make, Claude, Framer, Webflow, ProtoPie, Microsoft Clarity, GitHub, Vercel, Cloudflare</dd>
-  </dl>
-</section>
+<div class="role">
+  <p class="head"><span><strong>Freelance UI/UX Designer</strong>, Self-employed</span><span class="dates">Jan 2019 - Jun 2020</span></p>
+  <ul>
+    <li>Designed websites and app interfaces for freelance clients while studying.</li>
+  </ul>
+</div>
 
-<section aria-labelledby="teach-h">
-  <h2 id="teach-h">Teaching and Mentoring</h2>
+<h2>Core Skills</h2>
+<p class="skill"><strong>Design:</strong> Product Design, UX Design, UI Design, Interaction Design, Information Architecture, User Flows, Wireframing, Prototyping, Design Systems, Responsive Web Design, Mobile App Design, Design Handoff</p>
+<p class="skill"><strong>Research:</strong> User Research, User Interviews, Usability Testing, Behavior Analytics (Microsoft Clarity), Business Analysis, Requirements Gathering</p>
+<p class="skill"><strong>Leadership:</strong> Design Team Leadership, Hiring, Mentoring, Design Reviews, Stakeholder Management, Cross-functional Collaboration</p>
+<p class="skill"><strong>AI-Assisted Design:</strong> AI-assisted requirements analysis, AI-assisted research, AI-generated user flows, rapid AI prototyping for user testing, turning prototypes into coded, deployed products</p>
+<p class="skill"><strong>Tools:</strong> Figma, Figma Make, Claude, Framer, Webflow, ProtoPie, Microsoft Clarity, GitHub, Vercel, Cloudflare</p>
 
-  <article class="role">
-    <div class="role-head"><h3>UX Summer Course Lecturer</h3><span class="dates">May 2024 - Present</span></div>
-    <p class="org"><a href="https://www.linkedin.com/company/faculty-of-computer-information-sciences-mansoura-university/">Mansoura University</a></p>
-    <ul class="points">
-      <li>Teach the UX summer course at the Faculty of Computer Science (three consecutive years) through hands-on projects.</li>
-    </ul>
-  </article>
+<h2>Teaching and Mentoring</h2>
 
-  <article class="role">
-    <div class="role-head"><h3>Product Design (UI/UX) Instructor</h3><span class="dates">Jul 2025 - Oct 2025</span></div>
-    <p class="org"><a href="https://www.linkedin.com/company/quarter-academy/">Quarter Academy</a></p>
-    <ul class="points">
-      <li>Trained beginners through real-world projects to a job-ready portfolio.</li>
-    </ul>
-  </article>
+<div class="role">
+  <p class="head"><span><strong>UX Summer Course Lecturer</strong>, <a class="co" href="https://www.linkedin.com/company/faculty-of-computer-information-sciences-mansoura-university/">Mansoura University</a></span><span class="dates">May 2024 - Present</span></p>
+  <ul>
+    <li>Teach the UX summer course at the Faculty of Computer Science (three consecutive years) through hands-on projects.</li>
+  </ul>
+</div>
 
-  <article class="role">
-    <div class="role-head"><h3>Mentor</h3></div>
-    <p class="org">Design community events</p>
-  </article>
-</section>
+<div class="role">
+  <p class="head"><span><strong>Product Design (UI/UX) Instructor</strong>, <a class="co" href="https://www.linkedin.com/company/quarter-academy/">Quarter Academy</a></span><span class="dates">Jul 2025 - Oct 2025</span></p>
+  <ul>
+    <li>Trained beginners through real-world projects to a job-ready portfolio.</li>
+  </ul>
+</div>
 
-<section aria-labelledby="edu-h">
-  <h2 id="edu-h">Education</h2>
-  <div class="row"><span><strong>Bachelor's degree, Computer &amp; Information Systems</strong>, Mansoura University</span><span class="dates">2017 - 2021</span></div>
-  <div class="row"><span><strong>Interaction Design Foundation (IxDF)</strong>, UX design courses</span><span class="dates">2020 - 2021</span></div>
-</section>
+<div class="role">
+  <p class="head"><span><strong>Mentor</strong>, design community events</span></p>
+</div>
 
-<section aria-labelledby="lang-h">
-  <h2 id="lang-h">Languages</h2>
-  <div class="row"><span><strong>Arabic</strong>: Native</span></div>
-  <div class="row"><span><strong>English</strong>: Professional working proficiency</span></div>
-</section>
+<h2>Education</h2>
+<p class="row"><span><strong>Bachelor's degree, Computer &amp; Information Systems</strong>, Mansoura University</span><span class="dates">2017 - 2021</span></p>
+<p class="row"><span><strong>Interaction Design Foundation (IxDF)</strong>, UX design courses</span><span class="dates">2020 - 2021</span></p>
+
+<h2>Languages</h2>
+<p class="line">Arabic: Native | English: Professional working proficiency</p>
 
 </main>
-<footer>
-  <a href="Saeed_Gamal_CV.pdf" download="Saeed_Gamal_CV.pdf">Download this CV as a PDF</a>
-</footer>
 </body>
 </html>
