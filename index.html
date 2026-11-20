@@ -19,13 +19,22 @@ a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
 a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 
-.bar{max-width:794px;margin:24px auto 12px;display:flex;justify-content:flex-end}
-.download{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:6px;background:var(--ink);color:#fff;font-weight:700;font-size:14px}
-.download:hover{background:#000;text-decoration:none}
-.download:focus-visible{outline-color:var(--ink);outline-offset:3px}
-.download svg{width:18px;height:18px;flex:none}
+.wrap{max-width:1018px;margin:32px auto 40px;padding:0 16px;display:flex;align-items:flex-start;gap:20px}
+.page{flex:1 1 auto;min-width:0;max-width:794px;background:#fff;padding:60px 66px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.side{flex:none;width:192px;position:sticky;top:24px}
 
-.page{max-width:794px;margin:0 auto 40px;background:#fff;padding:60px 66px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.download{--w:192px;display:flex;align-items:center;justify-content:center;gap:8px;width:var(--w);height:52px;padding:0 16px;border-radius:26px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:width .35s cubic-bezier(.4,0,.2,1),padding .35s cubic-bezier(.4,0,.2,1),background .2s}
+.download:hover{background:#000;text-decoration:none}
+.download:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.download .label{max-width:140px;opacity:1;transition:max-width .35s cubic-bezier(.4,0,.2,1),opacity .2s}
+.download svg{width:20px;height:20px;flex:none;overflow:visible}
+.download.is-done{width:52px;padding:0}
+.download.is-done .label{max-width:0;opacity:0}
+.download.is-done .arrow{animation:drop .7s cubic-bezier(.5,0,.5,1) .25s 3}
+.download.is-done .tray{animation:tray .7s ease-out .25s 3}
+@keyframes drop{0%{transform:translateY(-9px);opacity:0}35%{opacity:1}75%{transform:translateY(2px);opacity:1}100%{transform:translateY(6px);opacity:0}}
+@keyframes tray{0%,60%{transform:scaleX(1)}75%{transform:scaleX(1.25)}100%{transform:scaleX(1)}}
+.download .arrow,.download .tray{transform-box:fill-box;transform-origin:center}
 
 h1{margin:0;font-size:30px;line-height:1.15;font-weight:700}
 .title{margin:2px 0 6px;font-size:16px;font-weight:700;color:var(--grey)}
@@ -47,16 +56,24 @@ li{margin-bottom:6px;line-height:1.6}
 .skill{margin:0 0 10px;line-height:1.6}
 .row{display:flex;justify-content:space-between;gap:2px 16px;flex-wrap:wrap;margin:0}
 
+@media (max-width:1060px){
+  .wrap{display:block;max-width:826px}
+  .side{position:fixed;top:auto;right:16px;bottom:16px;width:auto;z-index:10}
+}
 @media (max-width:700px){
-  .bar{margin:0;padding:12px 16px;background:#fff;border-bottom:1px solid #ddd}
-  .download{width:100%;justify-content:center}
-  .page{padding:28px 18px;margin:0;box-shadow:none}
+  .wrap{margin:0;padding:0}
+  .page{padding:28px 18px 96px;box-shadow:none}
   h1{font-size:28px}
   .dates{white-space:normal}
 }
+@media (prefers-reduced-motion:reduce){
+  .download,.download .label{transition:none}
+  .download.is-done .arrow,.download.is-done .tray{animation:none}
+}
 @media print{
   body{background:#fff}
-  .bar{display:none}
+  .side{display:none}
+  .wrap{display:block;margin:0;padding:0;max-width:none}
   .page{box-shadow:none;margin:0;padding:0;max-width:none}
   .role{break-inside:avoid}
 }
@@ -64,12 +81,7 @@ li{margin-bottom:6px;line-height:1.6}
 </head>
 <body>
 
-<div class="bar">
-  <a class="download" href="Saeed_Gamal_CV.pdf" download="Saeed_Gamal_CV.pdf">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-    Download CV (PDF)
-  </a>
-</div>
+<div class="wrap">
 
 <main class="page">
 
@@ -173,5 +185,23 @@ li{margin-bottom:6px;line-height:1.6}
 <p class="line">Arabic: Native | English: Professional working proficiency</p>
 
 </main>
+
+<aside class="side">
+  <a class="download" id="dl" href="Saeed_Gamal_CV.pdf" download="Saeed_Gamal_CV.pdf" aria-label="Download CV (PDF)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="arrow"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/></g><path class="tray" d="M5 21h14"/></svg>
+    <span class="label">Download CV (PDF)</span>
+  </a>
+</aside>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('dl'), t;
+  b.addEventListener('click',function(){
+    b.classList.remove('is-done'); void b.offsetWidth; b.classList.add('is-done');
+    clearTimeout(t); t=setTimeout(function(){b.classList.remove('is-done')},2800);
+  });
+})();
+</script>
 </body>
 </html>
